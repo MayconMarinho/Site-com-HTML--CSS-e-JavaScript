@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça sua doação!</title>
+
+    <style>
+
+        body {
+            background: linear-gradient(to right, #5f0c4e, #e05606);
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #container {
+            padding: 15px;
+        
+
+        }
+
+        #forms {
+
+            
+        }
+        .tabela {
+            text-align: left;
+            border: 5px solid black;
+            min-height: 75vh;
+            background: orangered;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+        }
+
+            #footer {
+            border: 1px solid black;
+            background: linear-gradient(to right, #253d4d, #481070);
+            width: 100%;
+            color: white;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #footer a:hover {
+            background-color: midnightblue;
+        }
+
+        input[type="text"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            box-sizing: border-box;
+
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        #btn:hover {
+            background-color: midnightblue;
+        }
+
+        .tabela input:hover {
+            background-color: rgb(255, 249, 249);
+        }
+
+        .tabela select:hover {
+            background-color: rgb(255, 249, 249);
+        }
+
+        .tabela textarea:hover {
+            background-color: rgb(255, 249, 249);
+        }
+
+        span {
+            font-size: 15px;
+            color: rgb(93, 4, 131);
+        }
+
+        #nav {
+            grid-area: nav;
+            border: 1px solid black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background: linear-gradient(to right, #be6724, #481070);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a {
+            margin: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        nav a:hover {
+            color: yellowgreen;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <nav>
+            <a href="principal.html">Página inicial</a>
+            <a href="nossos_trabalhos.html">Nossos trabalhos</a>
+            <a href="conscientizacao.html">Conscientização</a>
+            <a href="consulte.jsp">Colaboradores</a>
+        </nav>
+    </div>
+
+    <div id="container">
+    <div id="forms">
+    <form name="doar" method="post" action="recorda.jsp">
+    <table class="tabela" align="center">
+        <tr align="center"><td><img src="logo1.png.jpeg" height="115" width="115"></td></tr>
+        <tr align="center"><td><strong>Instituto Javé</strong></td></tr>
+    <tr><td>Nome: <span id="errorNome"></span><input type="text" placeholder="Ex: Rick Grimes" id="txtNome" name="txtNome"></td></tr> <br>
+    <tr><td>Telefone: <span id="errorFone"></span><input type="text" placeholder="Ex: 4002-8922" id="txtFone" name="txtFone"></td></tr> <br>
+    <tr><td>Endereço: <span id="errorEndereco"></span><input type="text" placeholder="Ex: Rua dos Alfeneiros, 04" id="txtEndereco" name="txtEndereco"></td></tr> <br>
+    <tr><td>Estado:<span id="errorEstado"></span><select name="txtEstado" id="txtEstado" required>
+        <option value="selecionar">Selecionar</option>
+        <option value="saopaulo">São Paulo</option>
+        <option value="minasgerais">Minas Gerais</option>
+        <option value="riodejaneiro">Rio de Janeiro</option>
+        <option value="distritofederal">Distrito Federal</option>
+        <option value="bahia">Bahia</option>
+        <option value="amazonas">Amazonas</option>
+        <option value="outro">Outro</option>
+    </select></td></tr>
+    <tr><td>Tipo de doação:<span id="errorDoar"></span><select name="txtDoar" id="txtDoar" required>
+        <option value="selecionar">Selecionar</option>
+        <option value="brinquedos">Brinquedos</option>
+        <option value="roupas">Roupas</option>
+        <option value="comida">Comida</option>
+        <option value="moveis">Móveis</option>
+        <option value="outro">Outro</option>
+    </select></td></tr>
+    <tr><td>Descreva (opcional):<textarea placeholder="Descreva aqui o que pretende doar..." maxlength="200" id="txtDesc" name="txtDesc"></textarea></td></tr><br>
+    <tr>
+    <td><input type="submit" value="Enviar" id="btn" onclick="validacao()"><input type="reset" id="btn" value="Limpar" onclick="reseta()"></td>
+    
+    </tr>
+    </table>
+    </form>
+    </div>
+    </div>
+    <table id="footer">
+        <tr style="font-weight: bold"> <td>Menu Rápido</td> <td>Redes Sociais</td> <td>Contato</td> <td>Endereço</td> <td>Colaboradores</td> </tr>
+        <tr> <td><a href="principal.html">Home</a></td> <td>instituto.jave <img src="i.jpeg" width="12px"></td> <td>(11) 9 3411-8076</td> <td>Rua das Flores, 179 - Padre Bento - Guarulhos, SP</td> <td>Centro Universitário Eniac</td> </tr>
+        <tr> <td><a href="nossos_trabalhos.html">Nossos trabalhos</a></td> <td>Instituto Javé <img src="f.jpeg" width="12px"></td> <td>erikaodepaula501@gmail.com</td> <td></td> <td>Universidade Paulista</td> </tr>
+        <tr> <td><a href="conscientizacao.html">Conscientização</a></td> <td></td> <td></td> <td></td> <td>Universidade Nove de Julho</td> </tr>
+    </table>
+
+    <script>
+
+        function reseta(){
+            document.getElementById("txtNome").value;
+            var fone = document.getElementById("txtFone").value;
+            var endereco = document.getElementById("txtEndereco").value;
+            document.querySelector("#errorNome").textContent = "";
+            document.querySelector("#errorFone").textContent = "";
+            document.querySelector("#errorEndereco").textContent = "";
+            document.querySelector("#errorEstado").textContent = "";
+            document.querySelector("#errorDoar").textContent = "";
+
+        }
+        function validacao(){
+
+            //Declaração de variáveis
+            var doar = document.getElementById("txtDoar").value;
+            var estado = document.getElementById("txtEstado").value;
+            var nome = document.getElementById("txtNome").value;
+            var fone = document.getElementById("txtFone").value;
+            var endereco = document.getElementById("txtEndereco").value;
+            
+            //O NOME não pode estar em branco, não pode ter mais de 50 caracteres
+            //e não pode conter números.
+            if(nome.length == 0 || nome.length > 50 || /\d/.test(nome)){
+               document.querySelector("#errorNome").textContent = "Nome inválido*";
+               event.preventDefault();
+            }
+
+            //O TELEFONE não pode estar em branco, não pode ter mais que 11 dígitos,
+            //não pode ter menos de 10 dígitos e precisa ser um número.
+            if(fone.length == 0 || fone.length > 11 || isNaN(fone) || fone.length < 10){
+                document.querySelector("#errorFone").textContent = "Telefone inválido*";
+                event.preventDefault();
+            };
+            
+            //O ENDEREÇO não pode estar em branco e não pode ter mais de 50 caracteres.
+            if(endereco.length == 0 || endereco.length > 50){
+                document.querySelector("#errorEndereco").textContent = "Endereço inválido*";
+                event.preventDefault();
+            };
+
+            //O campo precisa ser selecionado.
+            if(estado == "selecionar"){
+                document.querySelector("#errorEstado").textContent = " Campo não selecionado*";
+                event.preventDefault();
+            };
+
+            //O campo precisa ser selecionado.
+            if(doar == "selecionar"){
+                document.querySelector("#errorDoar").textContent = " Campo não selecionado*";
+                event.preventDefault();
+            };
+            }
+    </script>
+    
+</body>
+</html>
